@@ -8,19 +8,24 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
+#import "MasterViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
 
+
 @implementation AppDelegate
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+    
+    MasterViewController *mVC = [splitViewController.viewControllers objectAtIndex:0];
+    [mVC updateSongList:@"Michael Beese"];
+    
     splitViewController.delegate = self;
     return YES;
 }

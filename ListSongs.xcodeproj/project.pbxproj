@@ -15,6 +15,7 @@
 		8AF923191A953D190086E529 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF923181A953D190086E529 /* Images.xcassets */; };
 		8AF9231C1A953D190086E529 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AF9231A1A953D190086E529 /* LaunchScreen.xib */; };
 		8AF923281A953D190086E529 /* ListSongsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF923271A953D190086E529 /* ListSongsTests.m */; };
+		8AF923341A967D440086E529 /* MTZSongTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF923331A967D440086E529 /* MTZSongTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		8AF923211A953D190086E529 /* ListSongsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListSongsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF923261A953D190086E529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AF923271A953D190086E529 /* ListSongsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListSongsTests.m; sourceTree = "<group>"; };
+		8AF923321A967D440086E529 /* MTZSongTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTZSongTableViewCell.h; sourceTree = "<group>"; };
+		8AF923331A967D440086E529 /* MTZSongTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTZSongTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				8AF923121A953D190086E529 /* DetailViewController.h */,
 				8AF923131A953D190086E529 /* DetailViewController.m */,
 				8AF923151A953D190086E529 /* Main.storyboard */,
+				8AF923321A967D440086E529 /* MTZSongTableViewCell.h */,
+				8AF923331A967D440086E529 /* MTZSongTableViewCell.m */,
 				8AF923181A953D190086E529 /* Images.xcassets */,
 				8AF9231A1A953D190086E529 /* LaunchScreen.xib */,
 				8AF923081A953D190086E529 /* Supporting Files */,
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF9230E1A953D190086E529 /* AppDelegate.m in Sources */,
+				8AF923341A967D440086E529 /* MTZSongTableViewCell.m in Sources */,
 				8AF923111A953D190086E529 /* MasterViewController.m in Sources */,
 				8AF9230B1A953D190086E529 /* main.m in Sources */,
 				8AF923141A953D190086E529 /* DetailViewController.m in Sources */,
@@ -303,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -339,7 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -352,6 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ListSongs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -362,6 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ListSongs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
