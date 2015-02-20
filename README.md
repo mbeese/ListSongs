@@ -16,10 +16,12 @@ Key Functionality:
 
 Cool Things To Do With More Time:
 
-1. The launch screen specified in LaunchScreen.xib is not in the storyboard.  Currently, it does not show, but the preferred solution would be a launch image.
+1. Load and play the preview audio clip when the user goes to the detail view.
 
-2. Add an app icon.  Right now the app uses the default iOS 7+ icon.
+2. The launch screen specified in LaunchScreen.xib is not in the storyboard.  Currently, it does not show, but the preferred solution would be a launch image.
 
-3. Better use of images in the detail view.  Currently the image view is sized to fill the view.  There are a number of image resources associated with each song and these can be accessed using keys such as "artworkUrl30", "artworkUrl60" and "artworkUrl100".  The app uses "artworkUrl100" and puts the image into a UIImageView of size 220 x 220, but the image is a little blurry at that size.  With more time all the image keys would be tested with various sizes for the image view.
+3. Add an app icon.  Right now the app uses the default iOS 7+ icon.
+
+4. Better use of images in the detail view.  Currently the image view is sized to fill the view.  There are a number of image resources associated with each song and these can be accessed using keys such as "artworkUrl30", "artworkUrl60" and "artworkUrl100".  The app uses "artworkUrl100" and puts the image into a UIImageView of size 220 x 220, but the image is a little blurry at that size.  With more time all the image keys would be tested with various sizes for the image view.
 
 
