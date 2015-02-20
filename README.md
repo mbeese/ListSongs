@@ -12,7 +12,7 @@ Key Functionality:
 
 5. Date formatting was a particular challenge because the date strings for release date were formatted using a format that is unrecognized by the NSDateFormatter class.  Therefore, a custom method was added to the DetailViewController to convert a date string with this format: "2014-05-27T07:00:00Z" to one of this format: "May 27, 2014" omitting the time.
 
-6. By default the app comes up with a search filed that shows the name "Michael Beese".  All my electric violin music on iTunes shows up in the master view after the app launches.  The user can then type a new search term or terms such as "Jack Johnson" and the master view updates with a different selection of songs.
+6. By default the app comes up with a search field that shows the name "Michael Beese".  All my electric violin music on iTunes shows up in the master view after the app launches.  The user can then type a new search term or terms such as "Jack Johnson" and the master view updates with a different selection of songs.
 
 Cool Things To Do With More Time:
 
