@@ -25,7 +25,13 @@
 
 #pragma mark - Managing the detail item
 
-
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+    return (interfaceOrientation == UIInterfaceOrientationMaskPortrait) ? YES : NO;
+}
+- (NSUInteger)supportedInterfaceOrientations{
+    //return supported orientation masks
+    return UIInterfaceOrientationMaskPortrait;
+}
 -(void)playselectedsong{
     
     if (self.audioPreviewURL == nil)
@@ -174,6 +180,15 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
     [self playselectedsong];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    if (self.audioPlayer)
+    {
+        self.audioPlayer = nil;
+    }
+    [super viewWillDisappear:(animated) ? YES : NO];
 }
 
 - (void)didReceiveMemoryWarning {

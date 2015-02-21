@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -28,47 +30,100 @@
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhm-zo-OZn" userLabel="album name">
-                                <rect key="frame" x="16" y="76" width="288" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhm-zo-OZn" userLabel="album name">
+                                <rect key="frame" x="16" y="75" width="288" height="11"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="11" id="h9M-YM-cbx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAc-yl-ck2">
-                                <rect key="frame" x="16" y="135" width="288" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAc-yl-ck2">
+                                <rect key="frame" x="16" y="124" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9W0-5z-N47"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9W0-5z-N47"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJy-np-h8v">
+                                <rect key="frame" x="16" y="153" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJy-np-h8v">
-                                <rect key="frame" x="16" y="164" width="288" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6C-RY-Fkn" userLabel="Release Date">
+                                <constraints>
+                                    <constraint firstAttribute="height" id="5IG-HV-VQJ"/>
+                                    <constraint firstAttribute="height" constant="21" id="WGq-NF-HkZ"/>
+                                    <constraint firstAttribute="width" constant="310" id="f03-s7-uUW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WGq-NF-HkZ"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L1k-pU-zn6" userLabel="Artwork">
-                                <rect key="frame" x="50" y="230" width="220" height="220"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIZ-5q-CDa" userLabel="album name value">
+                                <rect key="frame" x="30" y="94" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="3MM-Yv-bBK"/>
+                                    <constraint firstAttribute="height" constant="21" id="eYY-Su-fVq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eYY-Su-fVq"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L1k-pU-zn6" userLabel="Artwork">
+                                <rect key="frame" x="50" y="198" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="RrC-ea-IUl"/>
+                                    <constraint firstAttribute="width" constant="220" id="ptr-s3-QQp"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6C-RY-Fkn" userLabel="Release Date">
-                                <rect key="frame" x="16" y="191" width="310" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIZ-5q-CDa" userLabel="album name value">
-                                <rect key="frame" x="30" y="105" width="280" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jhm-zo-OZn" firstAttribute="trailing" secondItem="lAc-yl-ck2" secondAttribute="trailing" id="4MS-gF-XF9"/>
+                            <constraint firstItem="cIZ-5q-CDa" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="14" id="B2F-ub-tPc"/>
+                            <constraint firstAttribute="centerX" secondItem="L1k-pU-zn6" secondAttribute="centerX" id="Dq1-6A-6Ze"/>
+                            <constraint firstItem="fJy-np-h8v" firstAttribute="top" secondItem="lAc-yl-ck2" secondAttribute="bottom" constant="8" symbolic="YES" id="FV5-n8-zbL"/>
+                            <constraint firstItem="u6C-RY-Fkn" firstAttribute="top" secondItem="fJy-np-h8v" secondAttribute="bottom" constant="6" id="H0U-wF-0nu"/>
+                            <constraint firstItem="fJy-np-h8v" firstAttribute="trailing" secondItem="lAc-yl-ck2" secondAttribute="trailing" id="MYU-d1-VvU"/>
+                            <constraint firstItem="fJy-np-h8v" firstAttribute="leading" secondItem="u6C-RY-Fkn" secondAttribute="leading" id="THJ-c3-837"/>
+                            <constraint firstItem="fJy-np-h8v" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="Zwd-4I-vYn"/>
+                            <constraint firstItem="lAc-yl-ck2" firstAttribute="top" secondItem="cIZ-5q-CDa" secondAttribute="bottom" constant="9" id="alb-eo-cnu"/>
+                            <constraint firstItem="lAc-yl-ck2" firstAttribute="leading" secondItem="Jhm-zo-OZn" secondAttribute="leading" id="azB-i8-pBF"/>
+                            <constraint firstItem="u6C-RY-Fkn" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="bfO-Ge-DJP"/>
+                            <constraint firstItem="fJy-np-h8v" firstAttribute="centerX" secondItem="L1k-pU-zn6" secondAttribute="centerX" id="dA0-xB-aHl"/>
+                            <constraint firstItem="Jhm-zo-OZn" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="11" id="fFD-77-Flz"/>
+                            <constraint firstItem="cIZ-5q-CDa" firstAttribute="top" secondItem="Jhm-zo-OZn" secondAttribute="bottom" constant="8" symbolic="YES" id="gEd-d0-x8m"/>
+                            <constraint firstItem="lAc-yl-ck2" firstAttribute="leading" secondItem="fJy-np-h8v" secondAttribute="leading" id="tGQ-Yu-GCs"/>
+                            <constraint firstItem="L1k-pU-zn6" firstAttribute="top" secondItem="u6C-RY-Fkn" secondAttribute="bottom" constant="18" id="ybw-wY-scH"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="albumNameLabel" destination="cIZ-5q-CDa" id="O2x-Oc-EKv"/>
                         <outlet property="artistNameLabel" destination="lAc-yl-ck2" id="DDM-l6-x9Q"/>
@@ -79,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="111"/>
+            <point key="canvasLocation" x="902" y="108"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
