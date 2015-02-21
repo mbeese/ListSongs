@@ -2,6 +2,9 @@
 Summary: A simple iOS master-detail app that lists songs of an artist on iTunes.  
 
 Key Functionality: 
+
+First of all, this version of the app runs on iOS 7 but not iOS 8.  The UISplitViewController class has changed as of iOS 8 and the detail view controller is not initialized properly before it is loaded.  Hopefully this will have been fixed by the time you are reading this.
+
 1. The app was developed starting with the split view controller template project.
 
 2. The MasterViewController class is derived from UITableViewController.  The MasterViewController class has a method UpdateSongList updates the table based on a single search string.  The method uses dispatch_async with a selector that is performed in the background.  The fact that the web request and JSON parsing are done in a background thread can be verified by observing that  the user interface remains responsive while the app is downloading a new list of songs.  
