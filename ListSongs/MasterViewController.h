@@ -11,12 +11,10 @@
 @class DetailViewController;
 
 @interface MasterViewController : UITableViewController<UITextFieldDelegate>
-@property (strong, nonatomic) DetailViewController *detailViewController;
 
 - (void) updateSongList:(NSString *)searchString;
 @property (strong, nonatomic) NSArray *songs;
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
-
 
 @end
 

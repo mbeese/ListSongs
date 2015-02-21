@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "MTZSongTableViewCell.h"
+#import "AppDelegate.h"
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
@@ -16,7 +17,6 @@
 
 @implementation MasterViewController
 @synthesize searchField;
-
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
 
@@ -26,13 +26,17 @@
     
     NSString *URLString = [NSString stringWithFormat:@"http://itunes.apple.com/search?term=%@",newSearchString];
     NSURL *searchURL = [NSURL URLWithString:URLString];
+    
+
+    
     dispatch_async(kBgQueue, ^{
+        NSError *error;
         NSData* data = [NSData dataWithContentsOfURL:
-                        searchURL];
+                        searchURL options:NSDataReadingUncached error:&error];
         [self performSelectorInBackground:@selector(fetchedData:)
                                withObject:data];
     });
-    
+
 }
 
 
@@ -75,9 +79,12 @@
     // Do any additional setup after loading the view, typically from a nib.
     if (self.searchField)
         self.searchField.delegate = self;
-
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
+    if ([self.searchField.text isEqualToString:@"Search"])
+    {
+        self.searchField.text = @"Michael Beese";
+        [self updateSongList:self.searchField.text];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,19 +109,10 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
-
+        
         NSDictionary *song = [self.songs objectAtIndex:indexPath.row];
-        controller.songName = [song objectForKey:@"trackName"];
-
-        controller.albumName = [song objectForKey:@"collectionName"];
-        controller.artistName = [song objectForKey:@"artistName"];
-        controller.price = [song objectForKey:@"trackPrice"];
-        controller.releaseDate = [song objectForKey:@"releaseDate"];
-        
-        controller.audioPreviewURL = [song objectForKey:@"previewUrl"];
-        
-        controller.artworkURL = [song objectForKey:@"artworkUrl100"];
-        
+        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        appDelegate.selectedSong = song;
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -126,6 +124,10 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44.0;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.songs.count;
 }

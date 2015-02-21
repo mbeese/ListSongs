@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-
+#import "AppDelegate.h"
 @interface DetailViewController ()
 
 @end
@@ -26,9 +26,10 @@
 #pragma mark - Managing the detail item
 
 
-
-
 -(void)playselectedsong{
+    
+    if (self.audioPreviewURL == nil)
+        return;
     
     NSString *urlString = self.audioPreviewURL;
     AVPlayer *player = [[AVPlayer alloc]initWithURL:[NSURL URLWithString:urlString]];
@@ -37,7 +38,7 @@
                                              selector:@selector(playerItemDidReachEnd:)
                                                  name:AVPlayerItemDidPlayToEndTimeNotification
                                                object:[player currentItem]];
-    [self.audioPlayer addObserver:self forKeyPath:@"status" options:0 context:nil];
+//    [self.audioPlayer addObserver:self forKeyPath:@"status" options:0 context:nil];
 //    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
     
     [self.audioPlayer play];
@@ -132,6 +133,24 @@
 }
 - (void)configureView {
     // Update the user interface for the detail item.
+    
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    NSDictionary *song = appDelegate.selectedSong;
+    if (song == nil)
+        return;
+    
+    self.songName = [song objectForKey:@"trackName"];
+    
+    if (self.songName == nil)
+        return;
+    self.albumName = [song objectForKey:@"collectionName"];
+    self.artistName = [song objectForKey:@"artistName"];
+    self.price = [song objectForKey:@"trackPrice"];
+    self.releaseDate = [song objectForKey:@"releaseDate"];
+    
+    self.audioPreviewURL = [song objectForKey:@"previewUrl"];
+    
+    self.artworkURL = [song objectForKey:@"artworkUrl100"];
     
     self.navigationItem.title = self.songName;
     self.albumNameLabel.text = [NSString stringWithFormat:@"%@",self.albumName];
